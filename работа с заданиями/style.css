@@ -1,0 +1,36 @@
+.colored{
+    background-color: red;
+}
+
+.colorgreen{
+    background-color: green;
+}
+
+ul {
+	padding: 30px;
+	border: 1px solid red;
+}
+li {
+	list-style-type: none;
+	margin-bottom: 20px;
+	border: 1px dashed black;
+}
+
+#div1, #ul1, #li1 {
+	padding: 20px;
+}
+
+#div1 {
+	border: 1px solid red;
+}
+#ul1 {
+	border: 1px solid orange;
+}
+#li1 {
+	border: 1px solid green;
+}
+
+#block:not(.active) {
+	display: none;
+    width: 200px;
+}

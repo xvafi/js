@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+№1
+<input id="input1" type="text">
+<p></p>
+<script>
+    let input1 = document.querySelector("#input1")
+    let p = document.querySelector("p")
+    input1.addEventListener("blur",func)
+    function func(){
+    p.textContent = input1.value
+}
+</script>
+
+
+
+
+<!-- №2
+<br>
+    <input type="number" value="1" id="input1">
+    <br>
+    <input type="number" value="2" id="input1">
+    <br>
+    <input type="number" value="3" id="input1">
+    <br>
+    <input type="number" value="4" id="input1">
+    <br>
+    <input type="submit" value="сумма" id="button1">
+    <p class="p1"></p>
+    <script>
+  let button1 = document.querySelector('#button1');
+  let input1 = document.querySelectorAll('#input1');
+  let p1 = document.querySelector('.p1');
+
+  button1.addEventListener('click', function(){
+    let sum = 0;
+    for(let elem of input1){
+        sum += +elem.value;
+        p1.textContent = sum;
+    }
+  })
+    </script> -->
+
+
+<!-- №3 
+    <input type="number" id="input1" value="25">
+    <script>
+        let input1 = document.querySelector('#input1');
+
+        input1.addEventListener('blur', function(){
+            let arr = input1.value.split('');
+            let sum = 0;
+            for(let elem of arr){
+                sum += +elem;
+                input1.value = sum;
+            }
+        })
+    </script> -->
+
+
+<!-- №4 
+<input type="text" id="input1" value="25">
+<script>
+    let input1 = document.querySelector('#input1');
+    input1.addEventListener('blur', function(){
+        let arr = input1.value.split(',');
+        let sum = 0;
+        for(let elem of arr){
+            sum += +elem;
+            input1.value = sum/2;
+        }
+    });
+</script> -->
+
+
+<!-- №5 
+<p class="p1">Введите ФИО</p>
+<input type="text" id="input1" value="Волкова Александра Владиславовна">
+<br>
+<input type="text" id="input2">
+<br>
+<input type="text" id="input3">
+<br>
+<input type="text" id="input4">
+<script>
+    let input1 = document.querySelector('#input1');
+    let input2 = document.querySelector('#input2');
+    let input3 = document.querySelector('#input3');
+    let input4 = document.querySelector('#input4');
+    input1.addEventListener("blur",func)
+    function func(){
+    let a = input1.value;
+    let arr = [];
+    arr.push(a);
+    arr = a.split(" ");
+    input2.value = arr[0]
+    input3.value = arr[1]
+    input4.value = arr[2]
+}
+</script> -->
+
+
+
+<!-- №6 
+<input id="input1" type="text" value="">
+<script>
+    let input1 = document.querySelector("#input1")
+    input1.addEventListener("blur", function(){
+        let arr = input1.value.split('');
+        for(let i = 0; i < arr.lenght; i++){
+            arr[i] = arr[i].slice(0,1).toUpperCase() + arr[i].slice(1);
+        }
+        let result = arr.join('');
+        input1.value = result;
+    });
+</script> -->
+
+
+<!-- №7 
+<input id="input1" type="text">
+<script>
+    let input1 = document.querySelector("#input1")
+input1.addEventListener("blur",func)
+function func(){
+   let a = 0
+   let b = input1.value
+   let arr = []
+    arr.push(b)
+    arr = b.split(" ")
+   for(let i = 0; i<arr.length; i++){
+    a++
+   }
+   input1.value = a
+}
+</script> -->
+
+
+<!-- №8 
+<input id="input1" type="text">
+<script>
+    let input1 = document.querySelector('#input1');
+    input1.addEventListener("blur",func)
+    function func(){
+        let arr = input1.value.split('.');
+        let a = arr.reverse().join('-');
+        input1.value = a
+    }
+</script> -->
+
+
+<!-- №9 
+<input id="input1" type="text">
+<input id="button" type="button" value="">
+<script>
+let input1 = document.querySelector("#input1")
+let button = document.querySelector("#button")
+button.addEventListener("click",func)
+function func(){
+   let b = input1.value
+   let arr1 = []
+   arr1.push(b)
+   arr1 = b.split("")
+   let arr2 = []
+   arr2.push(b)
+   arr2 = b.split("")
+   arr2 = arr2.reverse()
+   if(arr1[0] == arr2[0]){
+      input1.value = 'true'
+   }
+   else{
+      input1.value = 'false'
+   }
+console.log(arr1,arr2)
+}
+</script> -->
+
+
+<!-- №10 
+<input id="input1" type="text">
+<script>
+    let input1 = document.querySelector("#input1")
+    input1.addEventListener("blur",func)
+    function func(){
+     let b = input1.value
+     let arr = []
+     arr.push(b)
+     arr = b.split("")
+   for(let i = 0; i<arr.length;i++){
+   if(3 == arr[i]){
+      input1.value = 'yes'
+   }
+   else{
+      input1.value = 'no'
+   }
+}
+console.log(arr)
+}
+</script> -->
+
+
+<!-- №11 
+<p>ddlfkoe</p>
+<p>ekjdkejo</p>
+<p>wjelkdpoek</p>
+<input id="button" type="button" value="">
+<script>
+    let p = document.querySelectorAll("p")
+let button = document.querySelector('#button')
+button.addEventListener("click",func)
+function func(){
+   for(let i = 0; i<p.length;i++){
+    p[i].textContent= p[i].textContent + (i + 1)
+}
+}
+</script> -->
+
+
+<!-- №12 
+<a class="ur" href="#">Ссылка: </a>
+<br>
+<a class="ur" href="#">Ссылка: </a>
+<script>
+let ur = document.querySelectorAll('.ur');
+
+for(let elem of ur){
+    elem.textContent += elem.href;
+}
+</script> -->
+
+
+<!-- №13 
+<a class="ur" href="#">Ссылка: </a>
+<br>
+<a class="ur" href="#">Ссылка: </a>
+<script>
+let ur = document.querySelectorAll('.ur');
+
+for(let elem of ur){
+    if(elem.href.startsWich('http://')){
+        elem.textContent += elem.href + '+'
+    }
+}
+</script> -->
+
+
+<!-- №14 
+<p class="p1">2</p>
+<p class="p1">3</p>
+<p class="p1">4</p>
+<input type="submit" id="button">
+<script>
+let p1 = document.querySelectorAll('.p1');
+let button = document.querySelector('#button');
+
+button.addEventListener('click', function(){
+    for(let elem of p1){
+        elem.textContent = +elem.textContent * +elem.textContent;
+    }
+})
+</script> -->
+
+
+<!-- №15 
+<input type="text" id="input1" value="">
+<script>
+    let input1 = document.querySelector("#input1");
+    input1.addEventListener('blur', func)
+        function func(){
+        let a = input1.value
+        let b = a.split(".")
+        let date = new Date(b[2], b[1]-1, b[0]);
+        let day = date.getDay();
+        let days = ['воскресение','понедельник','вторник','среда','четверг','пятница','суббота']
+        input1.value = (days[day])
+}
+</script> -->
+
+
+
+<!-- №16 
+<input type="text" id="input1">
+<input type="text" id="input2">
+<input type="button" id="button1">
+<input type="button" id="button2">
+<script>
+let input1 = document.querySelector("#input1")
+let input2 = document.querySelector("#input2")
+let button1 = document.querySelector("#button1")
+let button2 = document.querySelector("#button2")
+button1.addEventListener("click", func1)
+button2.addEventListener("click", func2)
+function func1(){
+   input1.value++
+}
+function func2(){
+   let a = input2.value
+   if(a > 0){
+      input2.value--
+   }
+}
+</script> -->
+
+
+<!-- №17 
+<input type="text" name="" id="input1">
+<p id="p1">rgfjdg</p>
+<p id="p2">fhghujfgb</p>
+<p id="p3">fkjdf</p>
+<script>
+let input1 = document.querySelector("#input1")
+let p1 = document.querySelector("#p1")
+let p2 = document.querySelector("#p2")
+let p3 = document.querySelector("#p3")
+p1.addEventListener("click", func1)
+p2.addEventListener("click", func2)
+p3.addEventListener("click", func3)
+function func1(){
+   input1.value = +input1.value + 1
+}
+function func2(){
+    input1.value = +input1.value + 1
+ }
+ function func3(){
+    input1.value = +input1.value + 1
+ }
+</script> -->
+
+
+<!-- №18 
+<div>
+jrfguhfguyer
+</div>
+<div>
+Gkjijuih
+</div>
+<input type="button" value="кнопка">
+<script>
+let elem = document.querySelectorAll("div")
+let button = document.querySelector("input")
+button.addEventListener('click',func)
+    function func(){
+        for(let i = 0; i < elem.length ;i++){
+        elem[i].textContent = elem[i].textContent.slice(0,10) + "..."
+        }
+}
+</script> -->
+
+
+<!-- №19 
+<input type="text" name="" id="">
+<script>
+let elem = document.querySelector("input")
+elem.addEventListener("blur",func)
+function func(){
+  let a = +elem.value
+  if( a >= 1  && a < 101){
+   elem.style.color = 'green'
+  }
+  else{
+   elem.style.color = 'red'
+  }
+}
+</script> -->
+
+
+<!-- №20 
+<input type="text" id="input1">
+<input type="submit" value="кнопка" id="button">
+<script>
+let input1 = document.querySelector("#input1")
+let button = document.querySelector("#button")
+button.addEventListener("click",func)
+function func(){
+  let a = ""
+  let b = "qwertyuiop[]asdfghjkl;'zxcvbnm,./1234567890+-*/!@#$%^&*()_+|№;%:?*()_+"
+  for(let i = 0; i<8; i++){
+    a += b.charAt(Math.floor(Math.random() * b.length))
+  }
+  input1.value = a
+}
+</script> -->
+
+
+<!-- №21 
+<input type="text" id="input1">
+<input type="submit" value="кнопка" id="button">
+<script>
+let input1 = document.querySelector("#input1")
+let button = document.querySelector("#button")
+button.addEventListener("click",func)
+function func(){
+  let a = ""
+  let b = inp.value
+  for(let i = 0; i<b.length; i++){
+    a += b.charAt(Math.floor(Math.random() * b.length))
+  }
+  inp.value = a
+}
+</script> -->
+
+
+<!-- №22 
+<input type="text" id="input1">
+<p id="p1"></p>
+<input type="submit" value="кнопка" id="button">
+<script>
+let input1 = document.querySelector("#input1")
+let p1 = document.querySelector("#p1")
+let button = document.querySelector("#button")
+button.addEventListener("click",func)
+function func(){
+  p1.textContent = 5/9 * (inp.value - 32)
+}
+</script> -->
+
+
+<!-- №23 
+<input type="text" id="input1">
+<p id="p1"></p>
+<input type="submit" value="кнопка" id="button">
+<script>
+let input1 = document.querySelector("#input1")
+let p1 = document.querySelector("#p1")
+let button = document.querySelector("#button")
+button.addEventListener("click",func)
+function func() {
+    let a = input1.value
+    for (let i = a - 1; i >= 1; i--) {
+      a= a * i; 
+    }
+    p1.textContent = a
+  }
+</script> -->
+
+
+<!-- №24 
+<input type="text" name="" id="input1">
+<input type="text" name="" id="input2">
+<input type="text" name="" id="input3">
+<p id="p1"></p>
+<input type="submit" value="кнопка" id="button">
+<script>
+let input1 = document.querySelector("#input1")
+let input2 = document.querySelector("#input2")
+let input3 = document.querySelector("#input3")
+let p1 = document.querySelector("#p1")
+let button = document.querySelector("#button")
+button.addEventListener("click",func)
+function func(){
+    let a = input1.value
+    let b = input2.value
+    let c = input3.value
+    let x = b*b-4*a*c
+    if (x<0){
+        x1 = "нет корней"
+        x2 = "нет корней"
+    }
+    else if (x===0){
+        x1=-b/(2*a)
+        x2=x1
+    }
+    else {
+        x1=(-b+Math.sqrt(x))/(2*a)
+        x2=(-b+Math.sqrt(x))/(2*a)
+    }
+    p1.textContent = x1+" "+x2
+}
+</script> -->
+
+</body>
+</html>
