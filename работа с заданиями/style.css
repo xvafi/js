@@ -1,9 +1,11 @@
 .colored{
     background-color: red;
+	color: white;
 }
 
 .colorgreen{
-    background-color: green;
+	background-color: green;
+	color: white;
 }
 
 ul {

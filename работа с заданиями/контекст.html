@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/работа с заданиями/style.css">
+    <title>Document</title>
+</head>
+<body>
+ <!-- <P>Контекст</P> -->
+<!-- №1
+ <input id="elem" value="3">
+
+ <Script>
+    "use strict";
+    let elem = document.querySelector('#elem');
+    elem.addEventListener('blur', func);
+
+function func() {
+	let self = this;
+	alert( square(self) );
+	function square() {
+		return self.value * self.value;
+	}
+}
+ </Script> -->
+
+ <!-- №2 -->
+ <!-- <input id="elem" value="3">
+
+ <script>
+    "use strict";
+    let elem = document.querySelector('#elem');
+    elem.addEventListener('blur', func);
+
+function func() {
+	alert( square(this) );
+	
+	function square(param) {
+	return param.value * param.value;
+	}
+}
+ </script> -->
+
+<!-- №1 -->
+<!-- <input id="elem1" value="text1">
+<input id="elem2" value="text2">
+<input id="elem3" value="text3">
+
+<script>
+    let elem1 = document.querySelector('#elem1')
+    let elem2 = document.querySelector('#elem2')
+    let elem3 = document.querySelector('#elem3')
+    function func() {
+	console.log(this.value);
+}
+func.call(elem1);
+func.call(elem2);
+func.call(elem3);
+</script> -->
+
+<!-- №2
+<input id="elem" value="hello">
+
+<script>
+    let elem = document.querySelector('#elem');
+    
+
+function func(name, surname) {
+    console.log(this.value + ', ' + name + ' ' + surname);
+}
+
+func.call(elem, 'Smit', 'John');
+</script> -->
+
+<!-- №10
+<input id="elem" value="привет">
+
+<script>
+    let elem = document.getElementById('elem');
+
+function func(name, surname) {
+	console.log(this.value + ', ' + name + ' ' + surname);
+}
+let newFunc = func.bind(elem);
+newFunc('John','Smit');
+</script> -->
+
+<p>Таймеры</p>
+<!-- №1
+<script>
+    setInterval(function() {
+	console.log('!');
+}, 3000);
+</script> -->
+
+<!-- №1
+<script>
+    let i = 100;
+setInterval(function() {
+	console.log(--i);
+}, 1000);
+</script> -->
+
+<!-- №1
+<script>
+    let i = 10;
+
+let timerId = setInterval(function() {
+	console.log(--i);
+	
+	if (i <= 0) {
+		clearInterval(timerId);
+	}
+}, 1000);
+</script> -->
+
+<!-- №1, №2
+<button id="start">start</button>
+
+<script>
+    let start = document.querySelector('#start');
+
+start.addEventListener('click', function func() {
+	let i = 100;
+	
+	setInterval(function() {
+		console.log(--i);
+	}, 1000);
+    start.removeEventListener('click', func); // отвязываем обработчик
+});
+</script> -->
+
+<!-- №1
+<button id="start">start</button>
+<button id="stop">stop</button>
+
+<script>
+let start = document.querySelector('#start');
+let stop  = document.querySelector('#stop');
+let timerId;
+start.addEventListener('click', function() {
+	let i = 100;
+	
+	timerId = setInterval(function() {
+		console.log(--i);
+        if (i <= 0)
+        clearInterval(timerId);
+	}, 1000);});
+stop.addEventListener('click', function(){
+	clearInterval(timerId);
+});
+</script> -->
+
+<!-- №2
+<input type="submit" id="start" value="start">
+<input type="submit" id="stop"  value="stop">
+
+<script>
+let start = document.querySelector('#start');
+let stop  = document.querySelector('#stop');
+let timerId;
+
+start.addEventListener('click', function() {
+	timerId = setInterval(function() {
+		let date = new Date;
+		console.log(date.getMinutes() + ' ' + date.getSeconds());
+	}, 1000);
+});
+
+stop.addEventListener('click', function() {
+	clearInterval(timerId);
+});
+</script> -->
+
+<!-- №3 -->
+<!-- <input type="submit" id="start" value="start">
+<input type="submit" id="stop"  value="stop">
+
+<script>
+    let start = document.querySelector('#start');
+let stop  = document.querySelector('#stop');
+
+let timerId;
+
+start.addEventListener('click', function() {
+	timerId = setInterval(function() {
+		let date = new Date;
+		console.log(date.getMinutes() + ' ' + date.getSeconds());
+	}, 1000);
+});
+
+stop.addEventListener('click', function() {
+	clearInterval(timerId);
+});
+</script> -->
+
+<!-- <input type="button" id="elem" value="10">
+<script>
+let elem = document.querySelector('#elem');
+
+elem.addEventListener('click', function() {
+    setInterval(function(self) {
+        self.value--;
+	}, 1000, this);
+});
+</script> -->
+<!-- <p id="elem"></p>
+<script>
+let elem = document.querySelector('#elem');
+
+setInterval(function(){
+    let date = new Date();
+    let num = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds(); 
+    elem.textContent = num;
+})
+</script> -->
+<p id="elem">Блять здесь какой-то текст</p>
+<script>
+let elem = document.querySelector('#elem');
+let k = 0;
+setInterval(function(){
+    k++;
+    if(k % 2 == 0){
+        elem.setAttribute('class','colored');
+    }else{
+        elem.setAttribute('class','colorgreen');
+    }
+}, 1000)
+</script>
+
+</body>
+</html>
