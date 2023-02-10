@@ -87,7 +87,7 @@ let newFunc = func.bind(elem);
 newFunc('John','Smit');
 </script> -->
 
-<p>Таймеры</p>
+<!-- <p>Таймеры</p> -->
 <!-- №1
 <script>
     setInterval(function() {
@@ -206,6 +206,9 @@ elem.addEventListener('click', function() {
 	}, 1000, this);
 });
 </script> -->
+
+<!-- 316 -->
+<!-- №8 -->
 <!-- <p id="elem"></p>
 <script>
 let elem = document.querySelector('#elem');
@@ -216,7 +219,9 @@ setInterval(function(){
     elem.textContent = num;
 })
 </script> -->
-<p id="elem">Блять здесь какой-то текст</p>
+
+<!-- №7 -->
+<!-- <p id="elem">здесь какой-то текст</p>
 <script>
 let elem = document.querySelector('#elem');
 let k = 0;
@@ -228,7 +233,183 @@ setInterval(function(){
         elem.setAttribute('class','colorgreen');
     }
 }, 1000)
-</script>
+</script> -->
+<!-- №6 -->
+<!-- <p id="elem"></p>
+<button id="start">start</button>
+<button id="stop">stop</button>
 
+<script>
+let elem = document.querySelector('#elem');
+let start = document.querySelector('#start');
+let stop  = document.querySelector('#stop');
+let timerId;
+start.addEventListener('click', function() {
+	let i = 1;
+	
+	timerId = setInterval(function() {
+		elem.textContent = i++;
+	}, 1000);});
+stop.addEventListener('click', function(){
+	clearInterval(timerId);
+});
+</script> -->
+
+<!-- №5 -->
+<!-- <p id="elem"></p>
+<button id="start">start</button>
+<input type="text" id="input">
+
+<script>
+let elem = document.querySelector('#elem');
+let start = document.querySelector('#start');
+let input = document.querySelector('#input');
+let timerId;
+start.addEventListener('click', function() {
+    elem.textContent = input.value; 
+    timerId = setInterval(function() {
+        if(+elem.textContent > 0 ){
+            elem.textContent = +elem.textContent - 1; 
+        }else{
+            	clearInterval(timerId);
+        }
+	}, 1000);
+});
+</script> -->
+
+<!-- №4 -->
+<!-- <button id="start">start</button>
+<input type="text" id="input">
+
+<script>
+let start = document.querySelector('#start');
+let input = document.querySelector('#input');
+let timerId;
+start.addEventListener('click', function() {
+    timerId = setInterval(function() {
+        if(input.value > 0 ){
+            input.value = +input.value - 1; 
+            // elem.textContent = +elem.textContent - 1; 
+        }else{
+            	clearInterval(timerId);
+        }
+	}, 1000);
+});
+</script> -->
+
+<!-- №3 -->
+<!-- <button id="start">start</button>
+<input type="text" id="input" value="2">
+
+<script>
+let start = document.querySelector('#start');
+let input = document.querySelector('#input');
+let timerId;
+start.addEventListener('click', function() {
+    timerId = setInterval(function() {
+        input.value = +input.value * +input.value;
+	}, 1000);
+});
+</script> -->
+
+<!-- <p id="elem2"></p>
+<input type="submit" id="elem">
+<script>
+    let elem = document.querySelector('#elem');
+    let elem2 = document.querySelector('#elem2');
+    elem.addEventListener('click', function() {
+	setTimeout(function() {
+		elem2.textContent = 'Ты челоаек чебурек';
+	}, 2000);
+});
+
+
+</script> -->
+
+<!-- Манипулирование элементами -->
+<p>Манипулирование элементами</p>
+
+<!-- №1 и №2-->
+<!-- <ol id="elem"></ol>
+<input id="button" type="submit"></input>
+<script>
+    let elem = document.querySelector('#elem');
+    let button = document.querySelector('#button');
+    
+button.addEventListener('click', function(){
+    let li = document.createElement('li');
+    li.textContent = 'item';
+    elem.appendChild(li);
+});
+</script> -->
+
+<!-- Привязывание событий при вставке элементов -->
+<!-- №1 -->
+<!-- <ol id="elem"></ol>
+<input id="button" type="submit"></input>
+<script>
+    let elem = document.querySelector('#elem');
+    let button = document.querySelector('#button');
+    
+button.addEventListener('click', function(){
+    let li = document.createElement('li');
+    li.textContent = 'item';
+    li.addEventListener('click', function(){
+        li.textContent += '!';
+    })
+    elem.appendChild(li);
+});
+</script> -->
+
+<!-- Создание элементов в цикле  -->
+<!-- №1 -->
+<!-- <ul id="ul"></ul>
+<script>
+    let ul = document.querySelector('#ul');
+
+for (let i = 1; i <= 10; i++) {
+	let li = document.createElement('li');
+	li.textContent = i;
+	
+	ul.appendChild(li);
+}
+</script> -->
+
+<!-- Навешивание обработчиков в цикле  -->
+<!-- №1 -->
+<!-- <div id="parent"></div>
+<p id="p"></p>
+<script>
+    let parent = document.querySelector('#parent');
+    let p = document.querySelector('#p');
+
+for (let i = 1; i <= 5; i++) {
+	let input = document.createElement('input');
+	
+	// Навешиваем обработчик клика:
+	input.addEventListener('blur', function() {
+        p.textContent = input.value;
+	});
+	
+	parent.appendChild(input);
+}
+</script> -->
+
+<!-- Удаление элементов  -->
+<ul id="parent">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+</ul>
+<input type="submit" id="button">
+
+<script>
+    let parent = document.querySelector('#parent');
+    let button = document.querySelector('#button');
+
+    button.addEventListener('click', function(){
+        parent.lastElementChild.remove();
+    });
+</script>
 </body>
 </html>
