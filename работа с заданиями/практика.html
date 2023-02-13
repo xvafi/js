@@ -8,6 +8,38 @@
     <title>Document</title>
 </head>
 <body>
-    
+<!-- №1
+<div id="parent"></div>
+
+<script>
+let parent = document.querySelector('#parent');
+let arr = [1, 2, 3, 4, 5];
+
+for (let elem of arr) {
+let p = document.createElement('p');
+p.textContent = elem;
+	parent.appendChild(p);
+p.addEventListener('click',function(){
+    p.textContent = +elem + 1;
+})
+}
+</script> -->
+
+№1,2,3,4
+<ul id="ul"></ul>
+
+<script>
+let ul = document.querySelector('#ul');
+let arr = [1, 2, 3, 4, 5];
+
+for (let elem of arr) {
+let li = document.createElement('li');
+li.textContent = elem;
+	ul.appendChild(li);
+    li.addEventListener('click',function(){
+    alert(li.textContent);
+})
+}
+</script>
 </body>
 </html>
