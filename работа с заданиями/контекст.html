@@ -344,8 +344,8 @@ button.addEventListener('click', function(){
 </script> -->
 
 <!-- Привязывание событий при вставке элементов -->
-<!-- №1 -->
-<!-- <ol id="elem"></ol>
+<!-- №1
+<ol id="elem"></ol>
 <input id="button" type="submit"></input>
 <script>
     let elem = document.querySelector('#elem');
@@ -396,7 +396,7 @@ for (let i = 1; i <= 5; i++) {
 </script> -->
 
 <!-- Удаление элементов  -->
-<ul id="parent">
+<!-- <ul id="parent">
 	<li>1</li>
 	<li>2</li>
 	<li>3</li>
@@ -410,6 +410,108 @@ for (let i = 1; i <= 5; i++) {
     button.addEventListener('click', function(){
         parent.lastElementChild.remove();
     });
-</script>
+</script> -->
+
+<!-- №1
+<ul id="parent">
+	<li>text</li>
+	<li>text</li>
+	<li>text</li>
+	<li>text</li>
+	<li>text</li>
+</ul>
+
+<script>
+let parent = document.querySelector('#parent');
+
+let li = document.createElement('li');
+li.innerHTML = 'finish';
+let li2 = document.createElement('li');
+li2.innerHTML = 'start';
+
+parent.append(li);
+parent.prepend(li2); -->
+<!-- </script> -->
+<!-- №2,3
+<ul id="parent">
+	<li>text</li>
+	<li>text</li>
+	<li id="elem">text</li>
+	<li>text</li>
+	<li>text</li>
+</ul>
+
+<script>
+    let parent = document.querySelector('#parent');
+    let elem = document.querySelector('#elem');
+
+    let li = document.createElement('li');
+    li.innerHTML = 'new'
+    li.addEventListener('click', function(){
+        li.textContent += '!';
+    });
+
+    parent.insertBefore(li , elem);
+</script> -->
+
+<!-- №1
+<div id="elem" style="border: 1px solid red;">
+	<p>text</p>
+	<p>text</p>
+	<p>text</p>
+</div>
+
+<script>
+let p = document.createElement('p');
+p.innerHTML = '!!!';
+
+let elem = document.querySelector('#elem');
+elem.insertAdjacentElement('beforeBegin', p);
+</script> -->
+
+<!-- №2
+<div id="elem" style="border: 1px solid red;">
+	<p>text</p>
+	<p>text</p>
+	<p>text</p>
+</div>
+
+<script>
+let p = document.createElement('p');
+p.innerHTML = '!!!';
+
+let elem = document.querySelector('#elem');
+elem.insertAdjacentElement('afterEnd', p);
+</script> -->
+
+<!-- №5
+<div id="elem" style="border: 1px solid red;">
+	<p>text</p>
+	<p>text</p>
+	<p>text</p>
+</div>
+
+<script>
+    let elem = document.querySelector('#elem');
+elem.insertAdjacentHTML('beforeBegin', '<div class="www"><p>text</p><p>text</p><input></div>');
+</script> -->
+
+<!-- №1
+<div class="div">
+    <input type="text" id="input">
+    <input type="submit" id="button">
+    
+</div>
+
+<script>
+    let input = document.querySelector('#input');
+    let button = document.querySelector('#button');
+
+    button.addEventListener('click' , function(){
+        let clone = input.cloneNode(true);
+        button.insertAdjacentElement('afterend', clone);
+        clone.insertAdjacentHTML('beforebegin', '<br>');
+    })
+</script> -->
 </body>
 </html>
