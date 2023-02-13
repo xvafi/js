@@ -513,5 +513,32 @@ elem.insertAdjacentHTML('beforeBegin', '<div class="www"><p>text</p><p>text</p><
         clone.insertAdjacentHTML('beforebegin', '<br>');
     })
 </script> -->
+
+<!-- №1
+<div id="elem" class="www"></div>
+
+<script>
+let elem = document.querySelector('#elem');
+console.log(elem.matches('div.www'));
+</script> -->
+
+<!-- №2
+<p id="elem" class="www"></p>
+<script>
+let elem = document.querySelector('#elem');
+console.log(elem.matches('p.www'));
+</script> -->
+
+<!-- №3
+<div id="elem1">
+	<p id="elem2"></p>
+</div>
+
+<script>
+let elem1 = document.querySelector('#elem1');
+let elem2 = document.querySelector('#elem2');
+let contains = elem1.contains(elem2);
+console.log(contains);
+</script> -->
 </body>
 </html>
