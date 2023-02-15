@@ -36,3 +36,34 @@ li {
 	display: none;
     width: 200px;
 }
+
+#table3, table{
+	border: 1px solid red;
+}
+td{
+	width: 30px;
+	height: 30px;
+	border: 1px solid black;
+}
+.cross_out{
+    text-decoration: line-through red;
+}
+.bgrdgreen{
+    background-color: green;
+    color: white;
+}
+.hidden {
+	display: none;
+}
+.active {
+	background: red;
+}
+.color1 {
+	background: red;
+}
+.color2 {
+	background: green;
+}
+.color3 {
+	background: yellow;
+}

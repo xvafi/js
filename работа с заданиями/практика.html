@@ -25,21 +25,948 @@ p.addEventListener('click',function(){
 }
 </script> -->
 
-№1,2,3,4
-<ul id="ul"></ul>
+<!-- №1,2,3,4
+<ul id="ul18"></ul>
 
 <script>
-let ul = document.querySelector('#ul');
-let arr = [1, 2, 3, 4, 5];
-
+let arr = [1,2,3,4,5];
+let ul18 = document.querySelector('#ul18');
 for (let elem of arr) {
-let li = document.createElement('li');
-li.textContent = elem;
-	ul.appendChild(li);
-    li.addEventListener('click',function(){
-    alert(li.textContent);
-})
+    let li = document.createElement('li');
+    let span = document.createElement('span');
+    span.textContent = elem;
+    li.appendChild(span);
+    ul18.appendChild(li);
+    li.addEventListener('click', function func(){
+        li.appendc('!');
+        li.removeEventListener('click', func);
+    });
+    span.addEventListener('click', function(){
+        console.log(span.textContent);
+    })
 }
-</script>
+</script> -->
+
+<!-- <input id="inp48" placeholder="Ряды">
+    <br>
+    <input id="inp49" placeholder="Колонки">
+    <br>
+    <input id="button153" type="submit">
+    <table id="table3"></table>
+<script>
+    // №1 и №2 и №3 и №4
+let inp48 = document.querySelector('#inp48');
+let inp49 = document.querySelector('#inp49');
+let button153 = document.querySelector('#button153');
+let table3 = document.querySelector('#table3');
+
+button153.addEventListener('click', function(){
+    for (let i = 0; i < +inp48.value; i++) {
+        let tr = document.createElement('tr');
+        
+        for (let j = 1; j <= +inp49.value; j++) {
+            let td = document.createElement('td');
+            td.textContent = 'x';
+            tr.appendChild(td);
+        }
+        
+        table3.appendChild(tr);
+    }
+});
+
+</script> -->
+
+<!-- №1 
+<table id="table"></table>
+
+<script>
+    let table = document.querySelector('#table');
+
+let k2 = 1; // начальное значение счетчика
+for (let i = 0; i < 5; i++) {
+	let tr = document.createElement('tr');
+	
+	for (let i = 0; i < 5; i++) {
+		let td = document.createElement('td');
+		
+		td.textContent = k2; // записываем счетчик в ячейку
+		k2++; // увеличиваем счетчик
+		
+		tr.appendChild(td);
+	}
+	
+	table.appendChild(tr);
+}
+</script> -->
+
+<!-- №2
+<table id="table"></table>
+
+<script>
+let table = document.querySelector('#table');
+let k3 = 0; // начальное значение счетчика
+
+for (let i = 0; i < 5; i++) {
+	let tr = document.createElement('tr');
+	for (let i = 0; i < 5; i++) {
+		let td = document.createElement('td');
+		k3 += 2;
+		if(k3 % 2 == 0){
+			td.textContent = k3;
+		}
+        tr.appendChild(td);
+	}
+	table.appendChild(tr);
+}
+</script> -->
+
+<!-- №1 и №2
+<table id="table"></table>
+
+<script>
+let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]];
+let table = document.querySelector('#table');
+
+for(let subArr of arr){
+	let tr = document.createElement('tr');
+	
+	for (let elem of subArr) {
+		let td = document.createElement('td');
+		td.textContent = elem * elem;
+		tr.appendChild(td);
+	}
+	
+	table.appendChild(tr);
+}
+</script> -->
+
+<!-- №1,2,3
+<table id="table"></table>
+
+<script>
+    let employees = [
+	{name: 'employee1', age: 30, salary: 400},
+	{name: 'employee2', age: 31, salary: 500},
+	{name: 'employee3', age: 32, salary: 600},
+];
+
+let table = document.querySelector('#table');
+
+for(let elem of employees){
+	let tr = document.createElement('tr');
+
+	let td1 = document.createElement('td');
+	td1.textContent = elem.name;
+	tr.appendChild(td1);
+	
+	let td2 = document.createElement('td');
+	td2.textContent = elem.age;
+	tr.appendChild(td2);
+	td2.addEventListener('click',function(){
+		td2.textContent = +td2.textContent + 1; 
+	});
+
+	let td3 = document.createElement('td');
+	td3.textContent = elem.salary;
+	tr.appendChild(td3);
+	td3.addEventListener('click', function(){
+		let i = +td3.textContent * 0.1;
+		td3.textContent = +td3.textContent + i;
+	});
+
+	table.appendChild(tr);
+}
+</script> -->
+
+<!-- №1,2
+<table id="table"></table>
+<input id="button" type="submit">
+<script>
+    
+    let table = document.querySelector('#table');
+    let tr = document.createElement('tr');
+
+for (let i = 1; i <= 3; i++) {
+    let td = document.createElement('td');
+	tr.appendChild(td);
+}
+table.appendChild(tr);
+let button = document.querySelector('#button');
+
+button.addEventListener('click', function(){
+	let tr = document.createElement('tr');
+	for (let i = 1; i <= 3; i++) {
+		let td = document.createElement('td');
+		tr.appendChild(td);
+	}
+	table.appendChild(tr);
+});
+</script> -->
+
+<!-- №1
+<table id="table">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+</table>
+<input id="button" type="submit">
+
+<script>
+    let tds = document.querySelectorAll('#table td');
+    let button = document.querySelector('#button');
+
+button.addEventListener('click', function(){
+    for (let td of tds) {
+        td.textContent = +td.textContent * 2;
+	}
+});
+</script> -->
+
+<!-- №1
+<ul id="ul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<input type="submit" id="button">
+<script>
+
+let ul = document.querySelector('#ul');
+let button = document.querySelector('#button');
+let k =  0;
+let ul_elems = document.querySelectorAll('#ul li');
+
+
+button.addEventListener('click', function(event){
+    let li = document.createElement('li');
+	li.textContent = k; 
+	k++;
+    ul.appendChild(li);
+	for(let elem of ul_elems){
+        elem.addEventListener('click', function(){
+            this.remove();
+		});
+	}
+});
+</script> -->
+
+<!-- №1
+<ul id="ul">
+    <li>Li1</li>
+    <li>Li2</li>
+    <li>Li3</li>
+</ul>
+<script>
+    let ul = document.querySelectorAll('#ul li');
+
+for(let elem of ul){
+    let a = document.createElement('a');
+	a.href = '';
+	a.textContent = 'remove';
+	elem.appendChild(a);
+
+	elem.addEventListener('click', function(event) {
+        elem.remove();
+		event.preventDefault();
+	});
+}
+</script> -->
+
+<!-- №2
+<table id="table">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+</table>
+
+<script>
+let table = document.querySelectorAll('#table');
+let trs2 = document.querySelectorAll('#table tbody tr');
+
+for (let tr of trs2) {
+	let td = document.createElement('td');
+	let a = document.createElement('a');
+	a.href = '';
+	a.textContent = 'remove';
+	td.append(a);
+	tr.appendChild(td);
+	tr.addEventListener('click', function(event){
+		tr.remove();
+		event.preventDefault();
+	})
+}
+</script> -->
+
+<!-- №1
+<div id="div">
+    <p id="p">text</p>
+    <input id="inp">
+</div>
+
+<script>
+let p = document.querySelector('#p');
+let inp = document.querySelector('#inp');
+
+inp.value = p.textContent; 
+inp.addEventListener('input', function() {
+	p.textContent = this.value;
+});
+
+</script> -->
+
+<!-- №2
+<div id="div">
+    <p id="p">text</p>
+</div>
+
+<script>
+let p = document.querySelector('#p');
+
+p.addEventListener('click', function() {
+	let input = document.createElement('input');
+	input.value = p.textContent;
+	
+	input.addEventListener('blur', function() {
+		p.textContent = this.value;
+		this.remove();
+	});
+
+	p.parentElement.appendChild(input);
+});
+</script> -->
+
+<!-- №1
+<div id="div">
+    <p id="p">text</p>
+</div>
+
+<script>
+let p = document.querySelector('#p');
+
+p.addEventListener('click', function func() {
+let input = document.createElement('input');
+
+input.value = p.textContent; // сначала записываем текст абзаца в инпут
+p.textContent = ''; // затем убираем текст абзаца
+p.appendChild(input); // затем вставляем инпут
+
+input.addEventListener('blur', function() {
+	p.textContent = this.value;
+	p.addEventListener('click', func); // повесим событие обратно
+});
+
+p.removeEventListener('click', func); // отвяжем событие
+});
+</script> -->
+
+<!-- №1
+<ul id="ul">
+    <li>Li1</li>
+    <li>Li2</li>
+    <li>Li3</li>
+</ul>
+
+<script>
+    let li = document.querySelectorAll('#ul li');
+for (let elem of li) {
+	elem.addEventListener('click', function func() {
+		let input = document.createElement('input');
+		input.value = elem.textContent;
+		
+		elem.textContent = '';
+		elem.appendChild(input);
+		
+		input.addEventListener('blur', function() {
+			elem.textContent = this.value;
+			elem.addEventListener('click', func);
+		});
+		
+		elem.removeEventListener('click', func);
+	});
+}
+</script> -->
+
+<!-- №2
+<table id="table">
+    <tr>
+        <td>td1</td>
+        <td>td2</td>
+    </tr>
+    <tr>
+        <td>td3</td>
+        <td>td4</td>
+    </tr>
+</table>
+
+<script>
+let table = document.querySelectorAll('#table');
+let trs2 = document.querySelectorAll('#table tbody tr');
+
+for (let tr of trs2) {
+	let td = document.createElement('td');
+	let a = document.createElement('a');
+	a.href = '';
+	a.textContent = 'remove';
+	td.append(a);
+	tr.appendChild(td);
+	a.addEventListener('click', function(event){
+		tr.remove();
+		event.preventDefault();
+	})
+}
+</script> -->
+
+<!-- №1
+<div id="div">
+    <p><span>text1</span></p>
+    <p><span>text2</span></p>
+    <p><span>text3</span></p>
+</div>
+<script>
+
+    let span = document.querySelectorAll('#div span');
+
+for (let elem of span) {
+    let a = document.createElement('a');
+	a.href = '';
+	a.textContent = 'remove';
+	elem.insertAdjacentElement('afterend', a);
+	a.addEventListener('click', function(event){
+        elem.remove();
+		a.remove();
+		event.preventDefault();
+	});
+
+	elem.addEventListener('click', function func() {
+        let input = document.createElement('input');
+		input.value = elem.textContent;
+		elem.textContent = '';
+		elem.appendChild(input);
+		
+		
+		input.addEventListener('blur', function() {
+            elem.textContent = this.value;
+			elem.addEventListener('click', func);
+		});
+		
+		elem.removeEventListener('click', func);
+	});
+}
+</script> -->
+
+<!-- №2
+<div id="div178">
+    <p>text1</p>
+    <p>text2</p>
+    <p>text3</p>
+</div>
+
+<script>
+let paragraph = document.querySelectorAll('#div178 p');
+
+for(let elem of paragraph){
+	let span = document.createElement('span');
+	span.textContent = elem.textContent;
+	elem.textContent = '';
+	elem.append(span);
+
+	let a = document.createElement('a');
+	a.textContent = 'remove';
+	a.href = '';
+	elem.append(a);
+
+	a.addEventListener('click', function(event){
+		elem.remove();
+		event.preventDefault();
+	});
+
+	span.addEventListener('click', function func(){
+		let input = document.createElement('input');
+		input.value = span.textContent;
+		span.textContent = '';
+		span.appendChild(input);
+
+		
+		input.addEventListener('blur', function() {
+			span.textContent = input.value;
+			span.addEventListener('click', func);
+		});
+		
+		span.removeEventListener('click', func);
+	});	
+}
+
+</script> -->
+<!-- 
+№1,2
+<div id="div179">
+    <p>text1</p>
+    <p>text2</p>
+    <p>text3</p>
+</div>
+
+<script>
+    let paragraph2 = document.querySelectorAll('#div179 p');
+
+for(let elem of paragraph2){
+    let span = document.createElement('span');
+	span.textContent = elem.textContent;
+	elem.textContent = '';
+	elem.append(span);
+
+	let a = document.createElement('a');
+	a.textContent = 'remove';
+	a.href = '';
+	elem.append(a);
+    
+	a.addEventListener('click', function(event){
+        span.setAttribute('class','cross_out');
+		a.remove();
+		event.preventDefault();
+	});
+}
+</script> -->
+
+<!-- №3,4
+<table id="table16">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+</table>
+
+<script>
+let trs3 = document.querySelectorAll('#table16 tbody tr');
+
+for (let tr of trs3) {
+	let td = document.createElement('td');
+	let a = document.createElement('a');
+	a.href = '';
+	a.textContent = 'remove';
+	td.append(a);
+	tr.appendChild(td);
+	tr.addEventListener('click', function(event){
+		tr.setAttribute('class', 'bgrdgreen');
+		event.preventDefault();
+	})
+	tr.addEventListener('dblclick', function(event){
+		tr.removeAttribute('class', 'bgrdgreen');
+		event.preventDefault();
+	})
+}
+
+</script> -->
+
+<!-- <p id="p37">text</p>
+<input type="submit" id="button158" value="show">
+<input type="submit" id="button159" value="hide">
+<script>
+let p37 = document.querySelector('#p37');
+let button158 = document.querySelector('#button158');
+let button159 = document.querySelector('#button159');
+
+button159.addEventListener('click', function() {
+	p37.classList.add('hidden');
+});
+
+button158.addEventListener('click', function() {
+	p37.classList.remove('hidden');
+});
+</script> -->
+
+<!-- <p id="p39">1</p><button id="button161" data-elem="p39">toggle</button>
+<p id="p40">2</p><button id="button161" data-elem="p40">toggle</button>
+<p id="p41">3</p><button id="button161" data-elem="p41">toggle</button>
+    
+<script>
+    let buttons = document.querySelectorAll('#button161');
+
+for (let button of buttons) {
+	button.addEventListener('click', function() {
+		let elem = document.querySelector('#' + this.dataset.elem);
+		elem.classList.toggle('hidden');
+	});
+}
+
+</script> -->
+
+<!-- №1,2
+<ul id="ul">
+    <li></li>
+    <li></li>
+</ul>
+
+<script>
+    let ul = document.querySelectorAll('#ul li');
+
+    for(let elem of ul){
+        elem.textContent = 'text';
+        elem.addEventListener('click', function(){
+            this.classList.toggle('active');    
+        });
+    }
+</script> -->
+
+<!-- <table id="table">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</table>
+
+<script>
+    let tds = document.querySelectorAll('#table td');
+
+    let color = 'color1';
+    for (let td of tds) {
+        td.addEventListener('click', function() {
+            if (color == 'color1') {
+                color = 'color2'
+            } else {
+                color = 'color1'
+            }
+            
+            this.classList.add(color);
+        });
+    }
+
+</script> -->
+<!-- 
+<table id="table">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</table>
+<script>
+    let tds = document.querySelectorAll('#table td');
+
+let i = 0;
+let colors = ['color1', 'color2', 'color3'];
+
+for (let td of tds) {
+	td.addEventListener('click', function() {
+		this.classList.add(colors[i]);
+		
+		i++;
+		if (i == colors.length) {
+			i = 0;
+		}
+	});
+} -->
+
+<!-- №1,2,3,4,5,6
+<ul id="ul23"></ul>
+<input id="inp52">
+
+<script>
+let inp52 = document.querySelector('#inp52');
+let arr4 = ['li1', 'li2', 'li3'];
+let ul23 = document.querySelector('#ul23');
+
+
+
+function func(){
+	let input = document.createElement('input');
+	input.value = this.textContent;
+	this.textContent = '';
+	this.appendChild(input);
+	this.removeEventListener('click', func);
+	let self = this;
+	input.addEventListener('blur', function(){
+		self.textContent = input.value;
+		self.addEventListener('click', func);
+	});
+}
+
+function func2(li){
+	let a = document.createElement('a');
+	a.href = '';
+	a.textContent = ' remove';
+	li.append(a);
+	a.addEventListener('click', function(event){
+		event.preventDefault();
+		li.remove();
+	});
+}
+
+function func3(li, span){
+	let a = document.createElement('a');
+	a.href = '';
+	a.textContent = ' cross_out';
+	li.append(a);
+	a.setAttribute('class', 'colororangered');
+	a.addEventListener('click', function(event){
+		event.preventDefault();
+		span.setAttribute('class', 'cross_out');
+	});
+}
+
+for(let elem of arr4){
+	let span = document.createElement('span');
+	let li = document.createElement('li');
+
+	span.textContent = elem;
+	li.appendChild(span);
+	span.addEventListener('click',func);
+	ul23.appendChild(li);
+	func2(li);
+	func3(li, span);
+}
+
+inp52.addEventListener('blur', function(){
+	let li = document.createElement('li');
+	let span = document.createElement('span');
+	span.textContent = inp52.value;
+	li.append(span);
+	ul23.appendChild(li);
+	inp52.value = '';
+	span.addEventListener('click', func);
+	func2(li);
+	func3(li, span);
+});
+
+</script> -->
+
+<!-- <p>№6,7,8,9</p>
+<table id="table20"></table>
+<input id="inp53" placeholder="Name">
+<input id="inp54" placeholder="Age">
+<input id="inp55" placeholder="Salary">
+<input id="button164" type="submit">
+<script>
+let employees2 = [
+	{name: 'employee1', age: 30, salary: 400},
+	{name: 'employee2', age: 31, salary: 500},
+	{name: 'employee3', age: 32, salary: 600},
+];
+
+let table20 = document.querySelector('#table20');
+let button164 = document.querySelector('#button164');
+let inp53 = document.querySelector('#inp53');
+let inp54 = document.querySelector('#inp54');
+let inp55 = document.querySelector('#inp55');
+
+button164.addEventListener('click', function(){
+	let tr = document.createElement('tr');
+	let td1 = document.querySelector('td');
+	td1.textContent = inp53.value;
+	tr.appendChild(td1);
+	td1.addEventListener('click', func4);
+	
+	let td2 = document.querySelector('td');
+	td2.textContent = inp54.value;
+	tr.appendChild(td2);
+	td2.addEventListener('click', func4);
+	
+	
+	let td3 = document.querySelector('td');
+	td3.textContent = inp55.value;
+	tr.appendChild(td3);
+	td3.addEventListener('click', func4);
+	
+	table20.appendChild(tr);
+
+	let td = document.createElement('td');
+	tr.appendChild(td);
+	let a = document.createElement('a');
+	a.href = '';
+	a.textContent = 'remove';
+	td.append(a);
+	tr.appendChild(td);
+	a.addEventListener('click', function(event){
+		tr.remove();
+		event.preventDefault();
+	});
+});
+
+function func4(){
+	this.removeEventListener('click', func4);
+	let input = document.createElement('input');
+	input.value = this.textContent;
+	this.textContent = '';
+	this.appendChild(input);
+	let self = this;
+	input.addEventListener('blur', function(){
+		self.textContent = input.value;
+		self.addEventListener('click', func);
+	});
+}
+	
+for(let elem of employees2){
+	let tr = document.createElement('tr');
+	
+	let td1 = document.createElement('td');
+	td1.textContent = elem.name;
+	tr.appendChild(td1);
+	td1.addEventListener('click', func4);
+	
+	let td2 = document.createElement('td');
+	td2.textContent = elem.age;
+	tr.appendChild(td2);
+	td2.addEventListener('click', func4);
+	
+	
+	let td3 = document.createElement('td');
+	td3.textContent = elem.salary;
+	tr.appendChild(td3);
+	td3.addEventListener('click', func4);
+	
+	
+	table20.appendChild(tr);
+}
+func5();
+function func5(){
+	let trs4 = document.querySelectorAll('#table20 tr');
+	for (let tr of trs4) {
+		let td = document.createElement('td');
+		tr.appendChild(td);
+		let a = document.createElement('a');
+		a.href = '';
+		a.textContent = 'remove';
+		td.append(a);
+		tr.appendChild(td);
+		a.addEventListener('click', function(event){
+			tr.remove();
+			event.preventDefault();
+		});
+	}
+}
+</script> -->
+
+<!-- <p>№10,11,12,13</p>
+<ul id="ul24"></ul>
+<input id="inp56" placeholder="Name">
+<input id="inp57" placeholder="Age">
+<input id="inp58" placeholder="Salary">
+<input id="button165" type="submit">
+
+<script>
+    let ul24 = document.querySelector('#ul24');
+
+let employees3 = [
+	{name: 'employee1', age: 30, salary: 400},
+	{name: 'employee2', age: 31, salary: 500},
+	{name: 'employee3', age: 32, salary: 600},
+];
+
+for(let elem of employees3){
+	let li = document.createElement('li');
+
+	let span_name = document.createElement('span');
+	span_name.textContent = elem.name; 
+
+	let span_age = document.createElement('span');
+	span_age.textContent = elem.age; 
+
+	let span_salary = document.createElement('span');
+	span_salary.textContent = elem.salary; 
+
+	li.append(span_name);
+	span_name.addEventListener('click', func6);
+
+	li.append(' ');
+
+	li.append(span_age);
+	span_age.addEventListener('click', func6);
+
+	li.append(' ');
+	
+	li.append(span_salary);
+	span_salary.addEventListener('click', func6);
+
+	li.append(' ');
+	
+	ul24.appendChild(li);
+
+}
+function func6(){
+	this.removeEventListener('click', func6);
+	let input = document.createElement('input');
+	input.value = this.textContent;
+	this.textContent = '';
+	this.appendChild(input);
+	let self = this;
+	input.addEventListener('blur', function(){
+		self.textContent = input.value;
+		self.addEventListener('click', func6);
+	});
+}
+func7();
+function func7(){
+	let list = document.querySelectorAll('#ul24 li');
+	for(let li of list){
+		let a = document.createElement('a');
+		a.href = '';
+		a.textContent = 'remove';
+		li.appendChild(a);
+		a.addEventListener('click', function(event){
+			li.remove();
+			event.preventDefault();
+		});
+	}
+}
+let button165 = document.querySelector('#button165');
+let inp56 = document.querySelector('#inp56');
+let inp57 = document.querySelector('#inp57');
+let inp58 = document.querySelector('#inp58');
+
+button165.addEventListener('click', function(){
+	let li = document.createElement('li');
+
+	let span_name = document.createElement('span');
+	span_name.textContent = inp56.value; 
+
+	let span_age = document.createElement('span');
+	span_age.textContent = inp57.value; 
+
+	let span_salary = document.createElement('span');
+	span_salary.textContent = inp58.value; 
+
+	li.append(span_name);
+	span_name.addEventListener('click', func6);
+
+	li.append(' ');
+
+	li.append(span_age);
+	span_age.addEventListener('click', func6);
+
+	li.append(' ');
+	
+	li.append(span_salary);
+	span_salary.addEventListener('click', func6);
+
+	li.append(' ');
+	
+	ul24.appendChild(li);
+	let a = document.createElement('a');
+	a.href = '';
+	a.textContent = 'remove';
+	li.appendChild(a);
+	a.addEventListener('click', function(event){
+		li.remove();
+		event.preventDefault();
+	});
+
+});
+
+</script> -->
+
 </body>
 </html>
