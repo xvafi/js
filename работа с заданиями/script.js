@@ -12,3 +12,14 @@ function setAttr(id, class1, value, text){
     p3.textContent = text;
 }
 setAttr('p3','class', 'colorgreen', 'text');
+function setText(selector, text) {
+	let elems = document.querySelectorAll(selector);
+	
+	for (let elem of elems) {
+        let span = document.createElement('span');
+        span.textContent = ' ' + text;
+        elem.append(span);
+		// elem.textContent = text;
+	}
+}
+setText('.elem', 'text123123123');
